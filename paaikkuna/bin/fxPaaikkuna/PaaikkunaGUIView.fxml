@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import fi.jyu.mit.fxgui.ComboBoxChooser?>
+<?import fi.jyu.mit.fxgui.StringGrid?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="333.0" prefWidth="758.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxPaaikkuna.PaaikkunaGUIController">
+   <bottom>
+      <HBox spacing="10.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+         <children>
+            <Button fx:id="buttonUusiHavainto" mnemonicParsing="false" onAction="#handleUusiHavainto" text="Uusi havainto" />
+            <Button fx:id="buttonMuokkaa" mnemonicParsing="false" onAction="#handleMuokkaaHavaintoa" text="Muokkaa" />
+            <Button fx:id="buttonPoista" mnemonicParsing="false" onAction="#handlePoistaHavainto" text="Poista havainto" />
+         </children>
+      </HBox>
+   </bottom>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Tiedosto">
+            <items>
+              <MenuItem fx:id="menuTallenna" mnemonicParsing="false" onAction="#handleTallenna" text="Tallenna" />
+                  <MenuItem fx:id="menuAvaa" mnemonicParsing="false" onAction="#handleAvaa" text="Avaa..." />
+                  <MenuItem fx:id="menuLopeta" mnemonicParsing="false" onAction="#handleLopeta" text="Lopeta" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Muokkaa">
+            <items>
+              <MenuItem fx:id="menuUusiHavainto" mnemonicParsing="false" onAction="#handleUusiHavainto" text="Lisää uusi havinto..." />
+                  <MenuItem fx:id="menuMuokkaaHavaintoa" mnemonicParsing="false" onAction="#handleMuokkaaHavaintoa" text="Muokka havaintoa..." />
+                  <MenuItem fx:id="menuPoistaHavainto" mnemonicParsing="false" onAction="#handlePoistaHavainto" text="Poista havainto" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Apua">
+            <items>
+              <MenuItem fx:id="menuApua" mnemonicParsing="false" onAction="#handleApua" text="Apua" />
+                  <MenuItem fx:id="menuTietoja" mnemonicParsing="false" onAction="#handleTietoja" text="Tietoja..." />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <BorderPane prefHeight="262.0" prefWidth="168.0" BorderPane.alignment="CENTER">
+         <top>
+            <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Hakuehto" />
+                  <TextField fx:id="textHakukentta" onAction="#handleHaku" onKeyTyped="#handleHaku" />
+                  <ComboBoxChooser fx:id="chooserHaku" onAction="#handleHaku" prefHeight="26.0" prefWidth="202.0" rivit="Laji&#10;Päivämäärä&#10;Paikkakunta&#10;Sukupuoli" />
+               </children>
+            </VBox>
+         </top>
+      </BorderPane>
+   </left>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <top>
+            <Label text="Havainnot" BorderPane.alignment="CENTER" />
+         </top>
+         <center>
+            <StringGrid fx:id="gridHavainnot" editable="true" rivit="Päivämäärä|Laji|Paikkakunta|Sukupuoli&#10;" BorderPane.alignment="CENTER">
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy></StringGrid>
+         </center>
+      </BorderPane>
+   </center>
+</BorderPane>

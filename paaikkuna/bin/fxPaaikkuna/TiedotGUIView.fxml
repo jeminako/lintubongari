@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+
+<BorderPane prefHeight="137.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fi.jyu.mit.fxgui.ModalController">
+   <center>
+      <Pane maxHeight="1000.0" maxWidth="1000.0" prefHeight="374.0" prefWidth="240.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="83.0" layoutY="8.0" prefHeight="27.0" prefWidth="84.0" text="LINTUBONGARI" />
+            <Label layoutX="56.0" layoutY="35.0" text="Ohjelmointi 2 harjoitustyö" />
+            <Label layoutX="95.0" layoutY="52.0" text="Kevät 2019" />
+            <Label layoutX="59.0" layoutY="85.0" text="Tekijä: Jemina Kotkajuuri" />
+            <Label layoutX="98.0" layoutY="102.0" text="Versio 1.0" />
+            <Label alignment="BASELINE_LEFT" layoutX="750.0" layoutY="450.0" maxHeight="1000.0" maxWidth="1000.0" text="(╯°□°）╯︵ ┻━┻ rami pls älä käske mua pienentään tätä ikkunaa" />
+         </children>
+      </Pane>
+   </center>
+</BorderPane>
